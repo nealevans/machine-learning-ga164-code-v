@@ -1,0 +1,97 @@
+     GA-Designed GRIN
+                RDY             THI     RMD       GLA           CCY   THC   GLC
+> OBJ:        INFINITY        INFINITY                          100   100
+  STO:        INFINITY       25.000000                          100   100
+    2:       -61.56499        9.990661       'n1'               100   100
+    3:        80.41322        9.997528                          100   100
+    4:       -12.52174        6.767174       'n2'               100   100
+    5:       100.00000        9.482253                          100   100
+    6:        87.48741        4.253426       'n3'               100   100
+    7:       -30.33845        9.713797                          100   100
+    8:        INFINITY        0.000000                          100   100
+    9:        INFINITY        0.000000                          100   100
+   10:        INFINITY       99.975829                          100   100
+  IMG:        INFINITY        0.000000                          100   100
+ 
+SPECIFICATION DATA
+   EPD        8.00000
+   PUX        1.00000
+   PUY        1.00000
+   PUI        0.13533
+   DIM             MM
+   WL          589.00
+   REF              1
+   WTW              1
+   CWL         589.00
+   XAN        0.00000
+   YAN        0.00000
+   VUY        0.00000
+   VLY        0.00000
+ 
+APERTURE DATA/EDGE DEFINITIONS
+   CA
+        APERTURE data not specified for surface Obj thru  11
+ 
+PRIVATE CATALOG
+   PWL              589.00
+   'n1'           1.700000
+        LPT GRADIUM
+   GRC                 100
+   UDG            0.100000
+   UDG C1       0.3000E+01
+   GRC                 100
+   UDG C2      -0.1000E+01
+   GRC                 100
+   'n2'           1.700000
+        LPT GRADIUM
+   GRC                 100
+   UDG            0.100000
+   UDG C1       0.2000E+01
+   GRC                 100
+   UDG C2       0.1000E+01
+   GRC                 100
+   'n3'           1.700000
+        LPT GRADIUM
+   GRC                 100
+   UDG            0.100000
+   UDG C1       0.1000E+01
+   GRC                 100
+   UDG C2      -0.1000E+01
+   GRC                 100
+ 
+REFRACTIVE INDICES
+    GLASS CODE                    589.00
+   'n1'                         1.699832
+   UDG            0.100000
+   UDG C1       0.3000E+01
+   UDG C2      -0.1000E+01
+   'n2'                         1.699832
+   UDG            0.100000
+   UDG C1       0.2000E+01
+   UDG C2       0.1000E+01
+   'n3'                         1.699832
+   UDG            0.100000
+   UDG C1       0.1000E+01
+   UDG C2      -0.1000E+01
+ 
+No solves defined in system
+ 
+No pickups defined in system
+ 
+ 
+INFINITE CONJUGATES
+   EFL       -62.7517
+   BFL      -185.3577
+   FFL        64.6411
+   FNO        -7.8440
+   IMG DIS    99.9758
+   OAL        75.2048
+   PARAXIAL IMAGE
+    HT         0.0000
+   ANG         0.0000
+   ENTRANCE PUPIL
+    DIA        8.0000
+    THI        0.0000
+   EXIT PUPIL
+    DIA        7.7662
+    THI     -124.4401

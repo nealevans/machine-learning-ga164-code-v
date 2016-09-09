@@ -1,0 +1,591 @@
+lcl num ^merit ^meritv(10)
+lcl num ^par(200,26) ^fun(200) ^iv
+lcl num ^r1(0..200) ^r2(0..200) ^n(0..200) ^srn(0..200)
+lcl num ^sum ^avg ^eprinc ^raymiss ^nsum
+lcl num ^i2p ^i2s(0..200)
+lcl num ^UDGC11 ^UDGC12 ^UDGC21 ^UDGC22
+lcl num ^UDGC211 ^UDGC212 ^UDGC221 ^UDGC222
+lcl num ^UDGC311 ^UDGC312 ^UDGC321 ^UDGC322
+lcl num ^UDGC411 ^UDGC412 ^UDGC421 ^UDGC422
+lcl num ^iEle
+lcl num ^best ^bpar(200,26) ^bestmerit ^k
+lcl num ^input(4) ^output(8)
+
+out n
+ver all n
+exc n
+
+^eprinc == (epd)/400.
+
+^iv == -1
+
+usr ^par ^fun ^iv
+
+for ^c 1 2
+
+for ^k 1 26
+	^bpar(^c,^k) == ^par(^c,^k)
+end for
+
+^iEle == roundf(^par(^c,1))
+
+if (^iEle = 1)
+	rdy s2 ^par(^c,2)
+	rdy s3 ^par(^c,3)
+	thi s2 ^par(^c,4)
+	thi s3 ^par(^c,5)
+	^UDGC11 == roundf(^par(^c,6))
+	if (^par(^c,7) > 0)
+		^UDGC12 == 1
+	els
+		^UDGC12 == -1
+	end if
+	gla s2
+	gla s4
+	gla s6
+	gla s8
+	del prv all
+	prv
+	pwl 589
+	'n1' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC11)
+	UDG C2 (^UDGC12)
+	end
+	gla s2 'n1'
+	rdy s4 9e99
+	rdy s5 9e99
+	thi s4 0
+	thi s5 0
+	rdy s6 9e99
+	rdy s7 9e99
+	thi s6 0
+	thi s7 0
+	rdy s8 9e99
+	rdy s9 9e99
+	thi s8 0
+	thi s9 0
+	thi s10 ^par(^c,26)
+els if (^iEle = 2)
+	rdy s2 ^par(^c,2)
+	rdy s3 ^par(^c,3)
+	thi s2 ^par(^c,4)
+	thi s3 ^par(^c,5)
+	^UDGC11 == roundf(^par(^c,6))
+	if (^par(^c,7) > 0)
+		^UDGC12 == 1
+	els
+		^UDGC12 == -1
+	end if
+	^UDGC211 == roundf(^par(^c,12))
+	if (^par(^c,13) > 0)
+		^UDGC212 == 1
+	els
+		^UDGC212 == -1
+	end if
+	gla s2
+	gla s4
+	gla s6
+	gla s8
+	del prv all
+	prv
+	pwl 589
+	'n1' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC11)
+	UDG C2 (^UDGC12)
+	pwl 589
+	'n2' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC211)
+	UDG C2 (^UDGC212)
+	end
+	gla s2 'n1'
+	gla s4 'n2'
+	rdy s4 ^par(^c,8)
+	rdy s5 ^par(^c,9)
+	thi s4 ^par(^c,10)
+	thi s5 ^par(^c,11)
+	rdy s6 9e99
+	rdy s7 9e99
+	thi s6 0
+	thi s7 0
+	gla s6
+	rdy s8 9e99
+	rdy s9 9e99
+	thi s8 0
+	thi s9 0
+	gla s8
+	thi s10 ^par(^c,26)
+els if (^iEle = 3)
+	rdy s2 ^par(^c,2)
+	rdy s3 ^par(^c,3)
+	thi s2 ^par(^c,4)
+	thi s3 ^par(^c,5)
+	^UDGC11 == roundf(^par(^c,6))
+	if (^par(^c,7) > 0)
+		^UDGC12 == 1
+	els
+		^UDGC12 == -1
+	end if
+	^UDGC211 == roundf(^par(^c,12))
+	if (^par(^c,13) > 0)
+		^UDGC212 == 1
+	els
+		^UDGC212 == -1
+	end if
+	^UDGC311 == roundf(^par(^c,18))
+	if (^par(^c,19) > 0)
+		^UDGC312 == 1
+	els
+		^UDGC312 == -1
+	end if
+
+	gla s2
+	gla s4
+	gla s6
+	gla s8
+	del prv all
+	prv
+	pwl 589
+	'n1' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC11)
+	UDG C2 (^UDGC12)
+	'n2' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC211)
+	UDG C2 (^UDGC212)
+	pwl 589
+	'n3' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC311)
+	UDG C2 (^UDGC312)
+	end
+	gla s2 'n1'
+	rdy s4 ^par(^c,8)
+	rdy s5 ^par(^c,9)
+	thi s4 ^par(^c,10)
+	thi s5 ^par(^c,11)
+	gla s4 'n2'
+	rdy s6 ^par(^c,14)
+	rdy s7 ^par(^c,15)
+	thi s6 ^par(^c,16)
+	thi s7 ^par(^c,17)
+	gla s6 'n3'
+	rdy s8 9e99
+	rdy s9 9e99
+	thi s8 0
+	thi s9 0
+	gla s8
+	thi s10 ^par(^c,26)
+els
+	rdy s2 ^par(^c,2)
+	rdy s3 ^par(^c,3)
+	thi s2 ^par(^c,4)
+	thi s3 ^par(^c,5)
+	^UDGC11 == roundf(^par(^c,6))
+	if (^par(^c,7) > 0)
+		^UDGC12 == 1
+	els
+		^UDGC12 == -1
+	end if
+	^UDGC211 == roundf(^par(^c,12))
+	if (^par(^c,13) > 0)
+		^UDGC212 == 1
+	els
+		^UDGC212 == -1
+	end if
+	^UDGC311 == roundf(^par(^c,18))
+	if (^par(^c,19) > 0)
+		^UDGC312 == 1
+	els
+		^UDGC312 == -1
+	end if
+	^UDGC141 == roundf(^par(^c,24))
+	if (^par(^c,25) > 0)
+		^UDGC412 == 1
+	els
+		^UDGC412 == -1
+	end if
+
+
+	gla s2
+	gla s4
+	gla s6
+	gla s8
+	del prv all
+	prv
+	pwl 589
+	'n1' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC11)
+	UDG C2 (^UDGC12)
+	pwl 589
+	'n2' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC211)
+	UDG C2 (^UDGC212)
+	pwl 589
+	pwl 589
+	'n3' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC311)
+	UDG C2 (^UDGC312)
+	pwl 589
+	'n4' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC411)
+	UDG C2 (^UDGC412)
+	end
+	gla s2 'n1'
+	rdy s4 ^par(^c,8)
+	rdy s5 ^par(^c,9)
+	thi s4 ^par(^c,10)
+	thi s5 ^par(^c,11)
+	prv
+	pwl 589
+	end
+	gla s4 'n2'
+	rdy s6 ^par(^c,14)
+	rdy s7 ^par(^c,15)
+	thi s6 ^par(^c,16)
+	thi s7 ^par(^c,17)
+	gla s6 'n3'
+	rdy s8 ^par(^c,20)
+	rdy s9 ^par(^c,21)
+	thi s8 ^par(^c,22)
+	thi s9 ^par(^c,23)
+	gla s8 'n4'
+	thi s10 ^par(^c,26)
+end if
+
+
+^merit == 0
+^sum == 0
+^nsum == 1
+
+
+out y
+wri "_________"
+wri ^c
+out n
+!for ^i 200 0
+^i == 200
+unt
+	^r1(^i) == ^i*^eprinc
+	^input(1)==0; ^input(2)==^r1(^i); ^input(3)==0; ^input(4)==0
+!	^j == raysin(0,0,0.,^r1(^i),0.,0.
+	^j == raytra(0,0,0,^input,^output)
+	if (^j <> 0)
+		^raymiss == 1
+		^i == 0
+	els
+		!^r2(^i) == (y s11)
+		^r2(^i) == ^output(2)
+		^r2(^i) == absf(^r2(^i))
+		!^n(^i) == (n s11)
+		^n(^i) == ^output(6)
+		^nsum == ^nsum * ^n(^i)**6
+		^srn(^i) == (srn s11)
+		if ^i < 200
+			if ^r2(^i) > ^r2(^i+1)
+				^raymiss == 1
+				^i == 0	
+			end if
+		end if
+	end if
+!end for
+	^i == ^i-1
+end unt (^i < 0)
+
+if (^raymiss = 0)
+	^a == -logf((PUI))/((PUX)*(EPD)/2.)**2
+	for ^i 1 200
+		^j == ^i-1
+		^k == ^i
+		^i2p == (^r1(^i)*(^r1(^k)-^r1(^j))*expf(-^a*^r1(^i)**2)*^n(^i))&
+			/(^r2(^i)*(^r2(^k)-^r2(^j)))
+		^i2s(^i) == (^i2p*^srn(^i))/((^n(^i)*^srn(^i))+(sinf(acosf(^n(^i)))*sinf(acosf(^srn(^i)))))
+	!	^i2s(^i) == ^i2p*absf(^srn(^i))
+		^sum == ^sum + ^i2s(^i)
+	end for
+	^avg == ^sum/199
+	
+	for ^i 1 200
+		^merit == ^merit + (^i2s(^i) - ^avg)**2
+	end for
+
+	^merit == sqrtf(^merit/199)
+
+	^meritv(^c) == 1/^merit * expf(-1*((1 - ^nsum)**2)) * expf(-0.01*((8 - ^r2(200))**2))* expf(-0.1*((4 - ^r2(1))**2))
+	
+	out y
+	wri 1/^merit
+	wri expf(-1*((1 - ^nsum)**2))
+	wri expf(-0.01*((8 - ^r2(200))**2))
+	wri expf(-0.1*((4 - ^r2(1))**2))
+	out n
+
+els
+	^raymiss == 0
+	^meritv(^c) == 0
+end if	
+
+^fun(^c) == ^meritv(^c)
+if ^meritv(^c) > ^bestmerit
+	^bestmerit == ^meritv(^c)
+	^best == ^c
+end if
+
+	out y
+wri "Merit: " ^meritv(^c)
+	out n
+
+end for
+
+^c == ^best
+
+ver all n
+out n
+
+^iEle == roundf(^par(^c,1))
+
+if (^iEle = 1)
+	rdy s2 ^par(^c,2)
+	rdy s3 ^par(^c,3)
+	thi s2 ^par(^c,4)
+	thi s3 ^par(^c,5)
+	^UDGC11 == roundf(^par(^c,6))
+	if (^par(^c,7) > 0)
+		^UDGC12 == 1
+	els
+		^UDGC12 == -1
+	end if
+	gla s2
+	gla s4
+	gla s6
+	gla s8
+	del prv all
+	prv
+	pwl 589
+	'n1' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC11)
+	UDG C2 (^UDGC12)
+	end
+	gla s2 'n1'
+	rdy s4 9e99
+	rdy s5 9e99
+	thi s4 0
+	thi s5 0
+	rdy s6 9e99
+	rdy s7 9e99
+	thi s6 0
+	thi s7 0
+	rdy s8 9e99
+	rdy s9 9e99
+	thi s8 0
+	thi s9 0
+	thi s10 ^par(^c,26)
+els if (^iEle = 2)
+	rdy s2 ^par(^c,2)
+	rdy s3 ^par(^c,3)
+	thi s2 ^par(^c,4)
+	thi s3 ^par(^c,5)
+	^UDGC11 == roundf(^par(^c,6))
+	if (^par(^c,7) > 0)
+		^UDGC12 == 1
+	els
+		^UDGC12 == -1
+	end if
+	^UDGC211 == roundf(^par(^c,12))
+	if (^par(^c,13) > 0)
+		^UDGC212 == 1
+	els
+		^UDGC212 == -1
+	end if
+	gla s2
+	gla s4
+	gla s6
+	gla s8
+	del prv all
+	prv
+	pwl 589
+	'n1' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC11)
+	UDG C2 (^UDGC12)
+	pwl 589
+	'n2' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC211)
+	UDG C2 (^UDGC212)
+	end
+	gla s2 'n1'
+	gla s4 'n2'
+	rdy s4 ^par(^c,8)
+	rdy s5 ^par(^c,9)
+	thi s4 ^par(^c,10)
+	thi s5 ^par(^c,11)
+	rdy s6 9e99
+	rdy s7 9e99
+	thi s6 0
+	thi s7 0
+	gla s6
+	rdy s8 9e99
+	rdy s9 9e99
+	thi s8 0
+	thi s9 0
+	gla s8
+	thi s10 ^par(^c,26)
+els if (^iEle = 3)
+	rdy s2 ^par(^c,2)
+	rdy s3 ^par(^c,3)
+	thi s2 ^par(^c,4)
+	thi s3 ^par(^c,5)
+	^UDGC11 == roundf(^par(^c,6))
+	if (^par(^c,7) > 0)
+		^UDGC12 == 1
+	els
+		^UDGC12 == -1
+	end if
+	^UDGC211 == roundf(^par(^c,12))
+	if (^par(^c,13) > 0)
+		^UDGC212 == 1
+	els
+		^UDGC212 == -1
+	end if
+	^UDGC311 == roundf(^par(^c,18))
+	if (^par(^c,19) > 0)
+		^UDGC312 == 1
+	els
+		^UDGC312 == -1
+	end if
+
+	gla s2
+	gla s4
+	gla s6
+	gla s8
+	del prv all
+	prv
+	pwl 589
+	'n1' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC11)
+	UDG C2 (^UDGC12)
+	'n2' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC211)
+	UDG C2 (^UDGC212)
+	pwl 589
+	'n3' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC311)
+	UDG C2 (^UDGC312)
+	end
+	gla s2 'n1'
+	rdy s4 ^par(^c,8)
+	rdy s5 ^par(^c,9)
+	thi s4 ^par(^c,10)
+	thi s5 ^par(^c,11)
+	gla s4 'n2'
+	rdy s6 ^par(^c,14)
+	rdy s7 ^par(^c,15)
+	thi s6 ^par(^c,16)
+	thi s7 ^par(^c,17)
+	gla s6 'n3'
+	rdy s8 9e99
+	rdy s9 9e99
+	thi s8 0
+	thi s9 0
+	gla s8
+	thi s10 ^par(^c,26)
+els
+	rdy s2 ^par(^c,2)
+	rdy s3 ^par(^c,3)
+	thi s2 ^par(^c,4)
+	thi s3 ^par(^c,5)
+	^UDGC11 == roundf(^par(^c,6))
+	if (^par(^c,7) > 0)
+		^UDGC12 == 1
+	els
+		^UDGC12 == -1
+	end if
+	^UDGC211 == roundf(^par(^c,12))
+	if (^par(^c,13) > 0)
+		^UDGC212 == 1
+	els
+		^UDGC212 == -1
+	end if
+	^UDGC311 == roundf(^par(^c,18))
+	if (^par(^c,19) > 0)
+		^UDGC312 == 1
+	els
+		^UDGC312 == -1
+	end if
+	^UDGC141 == roundf(^par(^c,24))
+	if (^par(^c,25) > 0)
+		^UDGC412 == 1
+	els
+		^UDGC412 == -1
+	end if
+
+
+	gla s2
+	gla s4
+	gla s6
+	gla s8
+	del prv all
+	prv
+	pwl 589
+	'n1' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC11)
+	UDG C2 (^UDGC12)
+	pwl 589
+	'n2' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC211)
+	UDG C2 (^UDGC212)
+	pwl 589
+	pwl 589
+	'n3' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC311)
+	UDG C2 (^UDGC312)
+	pwl 589
+	'n4' LPT GRADIUM 1.7
+	UDG
+	UDG C1 (^UDGC411)
+	UDG C2 (^UDGC412)
+	end
+	gla s2 'n1'
+	rdy s4 ^par(^c,8)
+	rdy s5 ^par(^c,9)
+	thi s4 ^par(^c,10)
+	thi s5 ^par(^c,11)
+	prv
+	pwl 589
+	end
+	gla s4 'n2'
+	rdy s6 ^par(^c,14)
+	rdy s7 ^par(^c,15)
+	thi s6 ^par(^c,16)
+	thi s7 ^par(^c,17)
+	gla s6 'n3'
+	rdy s8 ^par(^c,20)
+	rdy s9 ^par(^c,21)
+	thi s8 ^par(^c,22)
+	thi s9 ^par(^c,23)
+	gla s8 'n4'
+	thi s10 ^par(^c,26)
+end if
+
+	out y
+wri "Merit: " ^bestmerit
+	out n
+
+ver y
+
+lbl END_label
